@@ -1,21 +1,21 @@
-#include "CitaMedica.h"
+#include "Cita.h"
 
 namespace SistemaHospitalModel {
 
     // Constructor vacío
-    CitaMedica::CitaMedica() {
+    Cita::Cita() {
         this->idCita = 0;
         this->paciente = gcnew Paciente();
         this->medico = gcnew Medico();
-        this->fecha = DateTime::Now;
-        this->hora = TimeSpan::Zero;
+        this->fecha = DateTime::Now.Year * 10000 + DateTime::Now.Month * 100 + DateTime::Now.Day; // Asigna la fecha en formato YYYYMMDD
+        this->hora = DateTime::Now.ToString("HH:mm");;// Asigna la hora en formato HH:MM
         this->proposito = "";
         this->resultado = "";
         this->tratamientoProgramado = gcnew Tratamiento();
     }
 
     //// Constructor con parámetros: 
-    CitaMedica::CitaMedica(int idCita, Paciente^ paciente, Medico^ medico, DateTime fecha, TimeSpan hora, String^ proposito, String^ resultado, Tratamiento^ tratamientoProgramado) {
+    Cita::Cita(int idCita, Paciente^ paciente, Medico^ medico, int fecha, String^ hora, String^ proposito, String^ resultado, Tratamiento^ tratamientoProgramado) {
         this->idCita = idCita;
         this->paciente = paciente;
         this->medico = medico;
@@ -27,68 +27,68 @@ namespace SistemaHospitalModel {
     }
 
     // Métodos GET
-    int CitaMedica::getIdCita() {
+    int Cita::getIdCita() {
         return this->idCita;
     }
 
-    Paciente^ CitaMedica::getPaciente() {
+    Paciente^ Cita::getPaciente() {
         return this->paciente;
     }
 
-    Medico^ CitaMedica::getMedico() {
+    Medico^ Cita::getMedico() {
         return this->medico;
     }
 
-    DateTime CitaMedica::getFecha() {
+    int Cita::getFecha() {
         return this->fecha;
     }
 
-    TimeSpan CitaMedica::getHora() {
+    String^ Cita::getHora() {
         return this->hora;
     }
 
-    String^ CitaMedica::getProposito() {
+    String^ Cita::getProposito() {
         return this->proposito;
     }
 
-    String^ CitaMedica::getResultado() {
+    String^ Cita::getResultado() {
         return this->resultado;
     }
 
-    Tratamiento^ CitaMedica::getTratamientoProgramado() {
+    Tratamiento^ Cita::getTratamientoProgramado() {
         return this->tratamientoProgramado;
     }
 
     // Métodos SET
-    void CitaMedica::setIdCita(int idCita) {
+    void Cita::setIdCita(int idCita) {
         this->idCita = idCita;
     }
 
-    void CitaMedica::setPaciente(Paciente^ paciente) {
+    void Cita::setPaciente(Paciente^ paciente) {
         this->paciente = paciente;
     }
 
-    void CitaMedica::setMedico(Medico^ medico) {
+    void Cita::setMedico(Medico^ medico) {
         this->medico = medico;
     }
 
-    void CitaMedica::setFecha(DateTime fecha) {
+    void Cita::setFecha(int fecha) {
         this->fecha = fecha;
     }
 
-    void CitaMedica::setHora(TimeSpan hora) {
+    void Cita::setHora(String^ hora) {
         this->hora = hora;
     }
 
-    void CitaMedica::setProposito(String^ proposito) {
+    void Cita::setProposito(String^ proposito) {
         this->proposito = proposito;
     }
 
-    void CitaMedica::setResultado(String^ resultado) {
+    void Cita::setResultado(String^ resultado) {
         this->resultado = resultado;
     }
 
-    void CitaMedica::setTratamientoProgramado(Tratamiento^ tratamientoProgramado) {
+    void Cita::setTratamientoProgramado(Tratamiento^ tratamientoProgramado) {
         this->tratamientoProgramado = tratamientoProgramado;
     }
 }

@@ -121,11 +121,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="frmDetalleCita.cpp" />
     <ClCompile Include="frmEditarMedico.cpp" />
+    <ClCompile Include="frmLogin.cpp" />
     <ClCompile Include="frmMantMedicos.cpp" />
     <ClCompile Include="frmMantPaciente.cpp" />
     <ClCompile Include="frmNuevoMedico.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
+    <ClCompile Include="frmVerCitas.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -136,7 +139,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="frmDetalleCita.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmEditarMedico.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmLogin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantMedicos.h">
@@ -151,11 +160,16 @@
     <ClInclude Include="frmPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmVerCitas.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDetalleCita.resx" />
     <EmbeddedResource Include="frmEditarMedico.resx">
       <DependentUpon>frmEditarMedico.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx" />
     <EmbeddedResource Include="frmMantMedicos.resx">
       <DependentUpon>frmMantMedicos.h</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +182,7 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVerCitas.resx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

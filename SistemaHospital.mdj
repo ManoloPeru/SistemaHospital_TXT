@@ -1101,40 +1101,6 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGSoT8a8m8ssDA=",
-											"_parent": {
-												"$ref": "AAAAAAGSEKRFjxjU+hM="
-											},
-											"model": {
-												"$ref": "AAAAAAGSoT8a6m8pvhg="
-											},
-											"font": "Arial;13;0",
-											"left": 45,
-											"top": 126,
-											"width": 303.14208984375,
-											"height": 13,
-											"text": "+idHistoria: int",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGSoTn4YmEsUVA=",
-											"_parent": {
-												"$ref": "AAAAAAGSEKRFjxjU+hM="
-											},
-											"model": {
-												"$ref": "AAAAAAGSoTn4WmEprtQ="
-											},
-											"font": "Arial;13;0",
-											"left": 45,
-											"top": 141,
-											"width": 303.14208984375,
-											"height": 13,
-											"text": "+NroHistoria: string",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAGSEKSD2hkyZZE=",
 											"_parent": {
 												"$ref": "AAAAAAGSEKRFjxjU+hM="
@@ -1144,7 +1110,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 45,
-											"top": 156,
+											"top": 126,
 											"width": 303.14208984375,
 											"height": 13,
 											"text": "+tratamientos: List<Tratamiento>",
@@ -1155,7 +1121,7 @@
 									"left": 40,
 									"top": 121,
 									"width": 313.14208984375,
-									"height": 53
+									"height": 23
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1178,7 +1144,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 45,
-											"top": 179,
+											"top": 149,
 											"width": 303.14208984375,
 											"height": 13,
 											"text": "+agregarTratamiento(tratamiento: Tratamiento): void",
@@ -1195,7 +1161,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 45,
-											"top": 194,
+											"top": 164,
 											"width": 303.14208984375,
 											"height": 13,
 											"text": "+obtenerHistorialCompleto(): List<Tratamiento>",
@@ -1204,7 +1170,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 40,
-									"top": 174,
+									"top": 144,
 									"width": 313.14208984375,
 									"height": 38
 								},
@@ -5709,24 +5675,6 @@
 					},
 					"name": "HistorialMédico",
 					"attributes": [
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGSoT8a6m8pvhg=",
-							"_parent": {
-								"$ref": "AAAAAAGSEKRFjhjMON4="
-							},
-							"name": "idHistoria",
-							"type": "int"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGSoTn4WmEprtQ=",
-							"_parent": {
-								"$ref": "AAAAAAGSEKRFjhjMON4="
-							},
-							"name": "NroHistoria",
-							"type": "string"
-						},
 						{
 							"_type": "UMLAttribute",
 							"_id": "AAAAAAGSEKSD0hks0XQ=",
