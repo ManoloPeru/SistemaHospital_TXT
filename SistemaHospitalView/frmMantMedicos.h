@@ -60,7 +60,7 @@ namespace SistemaHospitalView {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ colDirección;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ colTelefono;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ colEmail;
-	private: System::Windows::Forms::Button^ btnCertificaciones;
+
 	private: System::Windows::Forms::Button^ btnCitasAsignadas;
 	private: System::Windows::Forms::Button^ btnPacientesAsociados;
 	private: System::Windows::Forms::Button^ btnLimpiar;
@@ -99,7 +99,6 @@ namespace SistemaHospitalView {
 			this->btnNuevo = (gcnew System::Windows::Forms::Button());
 			this->btnEditar = (gcnew System::Windows::Forms::Button());
 			this->btnEliminar = (gcnew System::Windows::Forms::Button());
-			this->btnCertificaciones = (gcnew System::Windows::Forms::Button());
 			this->btnCitasAsignadas = (gcnew System::Windows::Forms::Button());
 			this->btnPacientesAsociados = (gcnew System::Windows::Forms::Button());
 			this->grpBoxBusq->SuspendLayout();
@@ -168,9 +167,11 @@ namespace SistemaHospitalView {
 			this->cmbEspecialidad->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->cmbEspecialidad->FormattingEnabled = true;
-			this->cmbEspecialidad->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
-				L"--TODOS--", L"Cardiología", L"Dermatología",
-					L"Gastroenterología", L"Neurología", L"Neumología", L"Pediatría", L"Oftalmología"
+			this->cmbEspecialidad->Items->AddRange(gcnew cli::array< System::Object^  >(21) {
+				L"--TODOS--", L"Cardiología", L"Cirugía General",
+					L"Dermatología", L"Endocrinología", L"Gastroenterología", L"Geriatría", L"Ginecología", L"Medicina de Urgencias", L"Medicina Interna",
+					L"Nefrología", L"Neumología", L"Neurología", L"Pediatría", L"Psiquiatría", L"Oftalmología", L"Oncología", L"Ortopedia", L"Otorrinolaringología",
+					L"Reumatología", L"Urología"
 			});
 			this->cmbEspecialidad->Location = System::Drawing::Point(585, 63);
 			this->cmbEspecialidad->Name = L"cmbEspecialidad";
@@ -259,7 +260,7 @@ namespace SistemaHospitalView {
 			this->btnNuevo->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnNuevo->Location = System::Drawing::Point(25, 667);
 			this->btnNuevo->Name = L"btnNuevo";
-			this->btnNuevo->Size = System::Drawing::Size(162, 37);
+			this->btnNuevo->Size = System::Drawing::Size(162, 48);
 			this->btnNuevo->TabIndex = 3;
 			this->btnNuevo->Text = L"Nuevo";
 			this->btnNuevo->UseVisualStyleBackColor = false;
@@ -271,7 +272,7 @@ namespace SistemaHospitalView {
 			this->btnEditar->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnEditar->Location = System::Drawing::Point(234, 667);
 			this->btnEditar->Name = L"btnEditar";
-			this->btnEditar->Size = System::Drawing::Size(162, 37);
+			this->btnEditar->Size = System::Drawing::Size(162, 48);
 			this->btnEditar->TabIndex = 4;
 			this->btnEditar->Text = L"Editar";
 			this->btnEditar->UseVisualStyleBackColor = false;
@@ -283,22 +284,11 @@ namespace SistemaHospitalView {
 			this->btnEliminar->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnEliminar->Location = System::Drawing::Point(430, 667);
 			this->btnEliminar->Name = L"btnEliminar";
-			this->btnEliminar->Size = System::Drawing::Size(162, 37);
+			this->btnEliminar->Size = System::Drawing::Size(162, 48);
 			this->btnEliminar->TabIndex = 5;
 			this->btnEliminar->Text = L"Eliminar";
 			this->btnEliminar->UseVisualStyleBackColor = false;
 			this->btnEliminar->Click += gcnew System::EventHandler(this, &frmMantMedicos::btnEliminar_Click);
-			// 
-			// btnCertificaciones
-			// 
-			this->btnCertificaciones->BackColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->btnCertificaciones->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->btnCertificaciones->Location = System::Drawing::Point(620, 667);
-			this->btnCertificaciones->Name = L"btnCertificaciones";
-			this->btnCertificaciones->Size = System::Drawing::Size(278, 37);
-			this->btnCertificaciones->TabIndex = 6;
-			this->btnCertificaciones->Text = L"Certificaciones";
-			this->btnCertificaciones->UseVisualStyleBackColor = false;
 			// 
 			// btnCitasAsignadas
 			// 
@@ -306,7 +296,7 @@ namespace SistemaHospitalView {
 			this->btnCitasAsignadas->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnCitasAsignadas->Location = System::Drawing::Point(925, 667);
 			this->btnCitasAsignadas->Name = L"btnCitasAsignadas";
-			this->btnCitasAsignadas->Size = System::Drawing::Size(252, 37);
+			this->btnCitasAsignadas->Size = System::Drawing::Size(252, 48);
 			this->btnCitasAsignadas->TabIndex = 7;
 			this->btnCitasAsignadas->Text = L"Citas asignadas";
 			this->btnCitasAsignadas->UseVisualStyleBackColor = false;
@@ -317,7 +307,7 @@ namespace SistemaHospitalView {
 			this->btnPacientesAsociados->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnPacientesAsociados->Location = System::Drawing::Point(1214, 667);
 			this->btnPacientesAsociados->Name = L"btnPacientesAsociados";
-			this->btnPacientesAsociados->Size = System::Drawing::Size(289, 37);
+			this->btnPacientesAsociados->Size = System::Drawing::Size(289, 48);
 			this->btnPacientesAsociados->TabIndex = 8;
 			this->btnPacientesAsociados->Text = L"Pacientes asociados";
 			this->btnPacientesAsociados->UseVisualStyleBackColor = false;
@@ -329,7 +319,6 @@ namespace SistemaHospitalView {
 			this->ClientSize = System::Drawing::Size(1565, 740);
 			this->Controls->Add(this->btnPacientesAsociados);
 			this->Controls->Add(this->btnCitasAsignadas);
-			this->Controls->Add(this->btnCertificaciones);
 			this->Controls->Add(this->btnEliminar);
 			this->Controls->Add(this->btnEditar);
 			this->Controls->Add(this->btnNuevo);
