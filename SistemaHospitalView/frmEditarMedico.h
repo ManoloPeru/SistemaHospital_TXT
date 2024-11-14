@@ -544,7 +544,7 @@ namespace SistemaHospitalView {
 			this->dgvEspecialidades->Rows->Add(objEspecialidad->getNombre());
 		}
 	}
-	
+
 	private: System::Void btnCancelar_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
@@ -561,7 +561,7 @@ namespace SistemaHospitalView {
 		double altura = Convert::ToDouble(this->txtAltura->Text);
 		int idMedico = Convert::ToInt32(this->txtIdMedico->Text);
 		String^ numeroColegioMedico = this->txtNumeroColegioMedico->Text;
-		
+
 		//Lista de Certificaciones
 		List<String^>^ certificaciones = gcnew List<String^>();
 		if (this->dgvCertificaciones->Rows->Count > 0) {
@@ -598,5 +598,5 @@ namespace SistemaHospitalView {
 			MessageBoxButtons::OK, MessageBoxIcon::Information);
 		this->Close();
 	}
-};
+	};
 }

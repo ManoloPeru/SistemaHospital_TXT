@@ -1,6 +1,7 @@
 #pragma once
 #include "frmMantMedicos.h"
 #include "frmVerCitas.h"
+#include "frmMantEspecialidades.h"
 
 namespace SistemaHospitalView {
 
@@ -45,6 +46,7 @@ namespace SistemaHospitalView {
 
 	private: System::Windows::Forms::ToolStripMenuItem^ reportesToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ verCitasToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ gestiónDeEspecialidadesToolStripMenuItem;
 
 
 	private:
@@ -64,8 +66,9 @@ namespace SistemaHospitalView {
 			this->mantenimientoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->medicoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->citasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->reportesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->verCitasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->reportesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->gestiónDeEspecialidadesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -86,7 +89,10 @@ namespace SistemaHospitalView {
 			// 
 			// mantenimientoToolStripMenuItem
 			// 
-			this->mantenimientoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->medicoToolStripMenuItem });
+			this->mantenimientoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->medicoToolStripMenuItem,
+					this->gestiónDeEspecialidadesToolStripMenuItem
+			});
 			this->mantenimientoToolStripMenuItem->Name = L"mantenimientoToolStripMenuItem";
 			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(193, 36);
 			this->mantenimientoToolStripMenuItem->Text = L"Mantenimiento";
@@ -94,7 +100,7 @@ namespace SistemaHospitalView {
 			// medicoToolStripMenuItem
 			// 
 			this->medicoToolStripMenuItem->Name = L"medicoToolStripMenuItem";
-			this->medicoToolStripMenuItem->Size = System::Drawing::Size(224, 36);
+			this->medicoToolStripMenuItem->Size = System::Drawing::Size(377, 36);
 			this->medicoToolStripMenuItem->Text = L"Médico";
 			this->medicoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::medicoToolStripMenuItem_Click);
 			// 
@@ -108,7 +114,7 @@ namespace SistemaHospitalView {
 			// verCitasToolStripMenuItem
 			// 
 			this->verCitasToolStripMenuItem->Name = L"verCitasToolStripMenuItem";
-			this->verCitasToolStripMenuItem->Size = System::Drawing::Size(224, 36);
+			this->verCitasToolStripMenuItem->Size = System::Drawing::Size(194, 36);
 			this->verCitasToolStripMenuItem->Text = L"Ver Citas";
 			this->verCitasToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::verCitasToolStripMenuItem_Click);
 			// 
@@ -117,6 +123,13 @@ namespace SistemaHospitalView {
 			this->reportesToolStripMenuItem->Name = L"reportesToolStripMenuItem";
 			this->reportesToolStripMenuItem->Size = System::Drawing::Size(121, 36);
 			this->reportesToolStripMenuItem->Text = L"Reportes";
+			// 
+			// gestiónDeEspecialidadesToolStripMenuItem
+			// 
+			this->gestiónDeEspecialidadesToolStripMenuItem->Name = L"gestiónDeEspecialidadesToolStripMenuItem";
+			this->gestiónDeEspecialidadesToolStripMenuItem->Size = System::Drawing::Size(377, 36);
+			this->gestiónDeEspecialidadesToolStripMenuItem->Text = L"Gestión de Especialidades";
+			this->gestiónDeEspecialidadesToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::gestiónDeEspecialidadesToolStripMenuItem_Click);
 			// 
 			// frmPrincipal
 			// 
@@ -148,6 +161,11 @@ private: System::Void verCitasToolStripMenuItem_Click(System::Object^ sender, Sy
 	frmVerCitas^ ventanaVerCitas = gcnew frmVerCitas();
 	ventanaVerCitas->MdiParent = this;
 	ventanaVerCitas->Show();
+}
+private: System::Void gestiónDeEspecialidadesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	frmMantEspecialidades^ ventanaEspecialidades = gcnew frmMantEspecialidades();
+	ventanaEspecialidades->MdiParent = this;
+	ventanaEspecialidades->Show();
 }
 };
 }

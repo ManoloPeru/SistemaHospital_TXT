@@ -403,6 +403,9 @@ namespace SistemaHospitalView {
 			medicoController->eliminarMedico(idEliminar);
 		}
 		MessageBox::Show("El alumno ha sido eliminado con éxito");
+		this->dgvLista->Rows->Clear();
+		List<Medico^>^ listaMedicos = medicoController->listarMedicos();
+		mostrarGrilla(listaMedicos);
 	}
 
 	private: System::Void btnEditar_Click(System::Object^ sender, System::EventArgs^ e) {

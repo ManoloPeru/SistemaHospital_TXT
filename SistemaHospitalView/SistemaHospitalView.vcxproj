@@ -122,10 +122,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="frmDetalleCita.cpp" />
+    <ClCompile Include="frmEditarEspecialidad.cpp" />
     <ClCompile Include="frmEditarMedico.cpp" />
     <ClCompile Include="frmLogin.cpp" />
+    <ClCompile Include="frmMantEspecialidades.cpp" />
     <ClCompile Include="frmMantMedicos.cpp" />
     <ClCompile Include="frmMantPaciente.cpp" />
+    <ClCompile Include="frmNuevaEspecialidad.cpp" />
     <ClCompile Include="frmNuevoMedico.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
     <ClCompile Include="frmVerCitas.cpp" />
@@ -142,16 +145,25 @@
     <ClInclude Include="frmDetalleCita.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmEditarEspecialidad.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmEditarMedico.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmLogin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmMantEspecialidades.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmMantMedicos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantPaciente.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmNuevaEspecialidad.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmNuevoMedico.h">
@@ -166,15 +178,22 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmDetalleCita.resx" />
+    <EmbeddedResource Include="frmEditarEspecialidad.resx">
+      <DependentUpon>frmEditarEspecialidad.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditarMedico.resx">
       <DependentUpon>frmEditarMedico.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx" />
+    <EmbeddedResource Include="frmMantEspecialidades.resx" />
     <EmbeddedResource Include="frmMantMedicos.resx">
       <DependentUpon>frmMantMedicos.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantPaciente.resx">
       <DependentUpon>frmMantPaciente.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevaEspecialidad.resx">
+      <DependentUpon>frmNuevaEspecialidad.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoMedico.resx">
       <DependentUpon>frmNuevoMedico.h</DependentUpon>

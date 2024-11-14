@@ -5,7 +5,7 @@ using namespace System;
 using namespace System::Windows::Forms;
 using namespace SistemaHospitalView;
 
-[STAThread] //ColunmComboBox
+[STAThread] //Para trabajar mas de un hilo de ejecución: SaveFile, ColunmComboBox
 void main(array <String^>^ args)
 {
 	Application::EnableVisualStyles();

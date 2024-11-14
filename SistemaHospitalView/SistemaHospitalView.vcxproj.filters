@@ -42,6 +42,15 @@
     <ClCompile Include="frmVerCitas.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="frmMantEspecialidades.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="frmNuevaEspecialidad.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="frmEditarEspecialidad.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmPrincipal.h">
@@ -68,6 +77,15 @@
     <ClInclude Include="frmVerCitas.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="frmMantEspecialidades.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmNuevaEspecialidad.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmEditarEspecialidad.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmLogin.resx">
@@ -77,6 +95,9 @@
       <Filter>Archivos de recursos</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetalleCita.resx">
+      <Filter>Archivos de recursos</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantEspecialidades.resx">
       <Filter>Archivos de recursos</Filter>
     </EmbeddedResource>
   </ItemGroup>
