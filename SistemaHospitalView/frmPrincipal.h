@@ -2,6 +2,7 @@
 #include "frmMantMedicos.h"
 #include "frmVerCitas.h"
 #include "frmMantEspecialidades.h"
+#include "frmReporteEquiposMedicos.h"
 
 namespace SistemaHospitalView {
 
@@ -47,6 +48,7 @@ namespace SistemaHospitalView {
 	private: System::Windows::Forms::ToolStripMenuItem^ reportesToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ verCitasToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ gestiónDeEspecialidadesToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ equiposMédicosToolStripMenuItem;
 
 
 	private:
@@ -65,10 +67,11 @@ namespace SistemaHospitalView {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->mantenimientoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->medicoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->gestiónDeEspecialidadesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->citasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->verCitasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->reportesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->gestiónDeEspecialidadesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->equiposMédicosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -104,6 +107,13 @@ namespace SistemaHospitalView {
 			this->medicoToolStripMenuItem->Text = L"Médico";
 			this->medicoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::medicoToolStripMenuItem_Click);
 			// 
+			// gestiónDeEspecialidadesToolStripMenuItem
+			// 
+			this->gestiónDeEspecialidadesToolStripMenuItem->Name = L"gestiónDeEspecialidadesToolStripMenuItem";
+			this->gestiónDeEspecialidadesToolStripMenuItem->Size = System::Drawing::Size(377, 36);
+			this->gestiónDeEspecialidadesToolStripMenuItem->Text = L"Gestión de Especialidades";
+			this->gestiónDeEspecialidadesToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::gestiónDeEspecialidadesToolStripMenuItem_Click);
+			// 
 			// citasToolStripMenuItem
 			// 
 			this->citasToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->verCitasToolStripMenuItem });
@@ -114,22 +124,23 @@ namespace SistemaHospitalView {
 			// verCitasToolStripMenuItem
 			// 
 			this->verCitasToolStripMenuItem->Name = L"verCitasToolStripMenuItem";
-			this->verCitasToolStripMenuItem->Size = System::Drawing::Size(194, 36);
+			this->verCitasToolStripMenuItem->Size = System::Drawing::Size(224, 36);
 			this->verCitasToolStripMenuItem->Text = L"Ver Citas";
 			this->verCitasToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::verCitasToolStripMenuItem_Click);
 			// 
 			// reportesToolStripMenuItem
 			// 
+			this->reportesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->equiposMédicosToolStripMenuItem });
 			this->reportesToolStripMenuItem->Name = L"reportesToolStripMenuItem";
 			this->reportesToolStripMenuItem->Size = System::Drawing::Size(121, 36);
 			this->reportesToolStripMenuItem->Text = L"Reportes";
 			// 
-			// gestiónDeEspecialidadesToolStripMenuItem
+			// equiposMédicosToolStripMenuItem
 			// 
-			this->gestiónDeEspecialidadesToolStripMenuItem->Name = L"gestiónDeEspecialidadesToolStripMenuItem";
-			this->gestiónDeEspecialidadesToolStripMenuItem->Size = System::Drawing::Size(377, 36);
-			this->gestiónDeEspecialidadesToolStripMenuItem->Text = L"Gestión de Especialidades";
-			this->gestiónDeEspecialidadesToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::gestiónDeEspecialidadesToolStripMenuItem_Click);
+			this->equiposMédicosToolStripMenuItem->Name = L"equiposMédicosToolStripMenuItem";
+			this->equiposMédicosToolStripMenuItem->Size = System::Drawing::Size(283, 36);
+			this->equiposMédicosToolStripMenuItem->Text = L"Equipos Médicos";
+			this->equiposMédicosToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::equiposMédicosToolStripMenuItem_Click);
 			// 
 			// frmPrincipal
 			// 
@@ -166,6 +177,11 @@ private: System::Void gestiónDeEspecialidadesToolStripMenuItem_Click(System::Obj
 	frmMantEspecialidades^ ventanaEspecialidades = gcnew frmMantEspecialidades();
 	ventanaEspecialidades->MdiParent = this;
 	ventanaEspecialidades->Show();
+}
+private: System::Void equiposMédicosToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	frmReporteEquiposMedicos^ ventanaRptEquiposMedicos = gcnew frmReporteEquiposMedicos();
+	ventanaRptEquiposMedicos->MdiParent = this;
+	ventanaRptEquiposMedicos->Show();
 }
 };
 }

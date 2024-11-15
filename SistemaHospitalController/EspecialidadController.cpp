@@ -139,18 +139,15 @@ Especialidad^ EspecialidadController::buscarEspecialidadByIdBin(int idEspecialid
 }
 
 // Método para buscar especialidades por nombr
-Especialidad^ EspecialidadController::buscarEspecialidadByNombreBin(String^ sNombre, String^ pathArchivo) {
+List<Especialidad^>^ EspecialidadController::buscarEspecialidadByNombreBin(String^ sNombre, String^ pathArchivo) {
     List<Especialidad^>^ listaEspecialidades = listarEspecialidadesBin(pathArchivo);
-    Especialidad^ especialidadEncontrado = gcnew Especialidad();
+    List<Especialidad^>^ listaEncontrados = gcnew List<Especialidad^>();
     for each (Especialidad ^ especialidad in listaEspecialidades) {
         if (especialidad->getNombre()->Contains(sNombre)) {
-            // Verificar por ID de especialidad
-            especialidadEncontrado->setIdEspecialidad(especialidad->getIdEspecialidad());
-            especialidadEncontrado->setNombre(especialidad->getNombre());
-            especialidadEncontrado->setDescripcion(especialidad->getDescripcion());
-            break;
+            // Contiene el nombre
+            listaEncontrados->Add(especialidad);
         }
     }
-    return especialidadEncontrado;
+    return listaEncontrados;
 }
 

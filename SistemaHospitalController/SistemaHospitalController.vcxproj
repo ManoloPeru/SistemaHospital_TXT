@@ -117,13 +117,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CitaController.h" />
+    <ClInclude Include="EquipoMedicoController.h" />
     <ClInclude Include="EspecialidadController.h" />
     <ClInclude Include="MedicoController.h" />
     <ClInclude Include="PacienteController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CitaController.cpp" />
-    <ClCompile Include="EspeciaidadController.cpp" />
+    <ClCompile Include="EquipoMedicoController.cpp" />
+    <ClCompile Include="EspecialidadController.cpp" />
     <ClCompile Include="MedicoController.cpp" />
     <ClCompile Include="PacienteController.cpp" />
   </ItemGroup>

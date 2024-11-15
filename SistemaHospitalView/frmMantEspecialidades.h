@@ -120,6 +120,7 @@ namespace SistemaHospitalView {
 			this->btnBuscar->TabIndex = 2;
 			this->btnBuscar->Text = L"Buscar";
 			this->btnBuscar->UseVisualStyleBackColor = true;
+			this->btnBuscar->Click += gcnew System::EventHandler(this, &frmMantEspecialidades::btnBuscar_Click);
 			// 
 			// txtNombre
 			// 
@@ -245,8 +246,9 @@ namespace SistemaHospitalView {
 		frmNuevaEspecialidad^ ventanaNuevaEspecialidad = gcnew frmNuevaEspecialidad();
 		ventanaNuevaEspecialidad->ShowDialog();
 		this->dgvLista->Rows->Clear();
+		String^ pathArchivo = pathBin() + "especialidad.bin";
 		EspecialidadController^ especialidadController = gcnew EspecialidadController();
-		List<Especialidad^>^ listaEspecialidades = especialidadController->listarEspecialidadesBin();
+		List<Especialidad^>^ listaEspecialidades = especialidadController->listarEspecialidadesBin(pathArchivo);
 		mostrarGrilla(listaEspecialidades);
 	}
 	private: System::Void btnEditar_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -296,6 +298,21 @@ namespace SistemaHospitalView {
 		List<Especialidad^>^ listaEspecialidades = especialidadController->listarEspecialidadesBin(pathArchivo);
 		mostrarGrilla(listaEspecialidades);
 	}
+
+	private: System::Void btnBuscar_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ nombre = this->txtNombre->Text;
+		List<Especialidad^>^ listaEspecialidades;
+		EspecialidadController^ objController = gcnew EspecialidadController();
+		String^ pathArchivo = pathBin() + "especialidad.bin";
+		if (nombre->CompareTo("") == 0) {
+			listaEspecialidades = objController->listarEspecialidadesBin(pathArchivo);
+		}
+		else
+		{
+			listaEspecialidades = objController->buscarEspecialidadByNombreBin(nombre, pathArchivo);
+		}
+		mostrarGrilla(listaEspecialidades);
+	}
 		   /*METODOSPERSONALES*/
 	public: void mostrarGrilla(List<Especialidad^>^ listaEspecialidades) {
 		this->dgvLista->Rows->Clear();
@@ -317,6 +334,7 @@ namespace SistemaHospitalView {
 		String^ rutaFinal = Path::Combine(rutaBase, "bin\\");
 		return rutaFinal;
 	}
+
 
 
 	};
